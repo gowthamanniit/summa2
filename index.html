@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function test()
+		{
+			var p=document.getElementById("t1").value;
+			var con1=p.match(/[a-z]/g);
+			var con2=p.match(/[A-Z]/g);
+			var con3=p.match(/[0-9]/g);
+			var con4=p.match(/[^a-zA-Z0-9]/g);
+			console.log({con1,con2,con3,con4})
+			if (con1 && con2 && con3 && con4 && p.length>=8)
+			{
+				alert("succes");
+			}
+			else
+			{
+				alert("missing");
+			}
+		}
+		function view()
+		{
+			document.getElementById("t1").type="text";
+		}
+	</script>
+</head>
+<body>
+<h2>Rules: 1.atleast one caps <br>
+2.atleast one small <br>
+3.atleast one speical char <br>
+4.atleast one number <br>
+</h2>
+<input type="password" id="t1" placeholder="Enter password here">
+<br>
+<button onclick="test()">validate</button>
+<button onclick="view()">view</button>
+
+</body>
+</html>
